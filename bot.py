@@ -1,4 +1,9 @@
 import discord
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+token = os.getenv("TOKEN")
 
 bot = discord.Bot()
 
@@ -11,3 +16,4 @@ async def hello(ctx):
     await ctx.respond("Hello!")
 
 bot.run("your token here")
+
