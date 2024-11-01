@@ -4,18 +4,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 token = os.getenv("TOKEN")
-guild_ids = os.getenv("GUILD_IDS")
 
 bot = discord.Bot()
 
-@bot.event
-async def on_ready():
-    print(f"We have logged in as {bot.user}")
+greetings = bot.create_group("greetings", "Greet people")
 
-@bot.slash_command(name="greet", description="Greets someone")
+@greetings.command()
 async def hello(ctx):
-    await ctx.respond("Hello!")
+  await ctx.respond(f"Hello, {ctx.author}!")
 
-print(token)
+@greetings.command()
+async def bye(ctx):
+  await ctx.respond(f"Bye, {ctx.author}!")
+
 bot.run(token)
 
