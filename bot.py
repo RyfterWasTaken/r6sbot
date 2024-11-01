@@ -16,5 +16,5 @@ async def on_ready():
 async def hello(ctx):
     await ctx.respond("Hello!")
 
-bot.run("your token here")
+bot.run(token)
 
