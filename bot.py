@@ -12,7 +12,7 @@ bot = discord.Bot()
 async def on_ready():
     print(f"We have logged in as {bot.user}")
 
-@bot.slash_command(guild_ids=guild_ids)
+@bot.slash_command(name="Greet", description="Greets someone")
 async def hello(ctx):
     await ctx.respond("Hello!")
 
