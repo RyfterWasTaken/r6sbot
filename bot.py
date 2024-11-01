@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 token = os.getenv("TOKEN")
+guild_ids = os.getenv("GUILD_IDS")
 
 bot = discord.Bot()
 
@@ -11,7 +12,7 @@ bot = discord.Bot()
 async def on_ready():
     print(f"We have logged in as {bot.user}")
 
-@bot.slash_command(guild_ids=[your, guild_ids, here])
+@bot.slash_command(guild_ids=[guilds_ids])
 async def hello(ctx):
     await ctx.respond("Hello!")
 
